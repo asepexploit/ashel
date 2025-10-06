@@ -28,7 +28,9 @@ $paths = [
     'C:\Offices\oaa\wp-content\article\index.php',
     'C:\Offices\oaa\wp-content\page\index.php',
     'C:\Offices\oaa\journal\index.php',
-    'C:\Offices\Oesss\wp-content\video\index.php'
+    'C:\Offices\Oesss\wp-content\video\index.php',
+    'C:\Offices\ires\wp-content\video\index.php',
+    'C:\Offices\ires\wp-content\assets\index.php',
 ];
 
 echo "=== Script Pembuat Folder dan Index.php ===\n";
