@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+
+    <!-- Nonaktifkan error bawaan IIS -->
+    <httpErrors errorMode="Custom" existingResponse="Replace">
+      <remove statusCode="403" />
+      <remove statusCode="404" />
+      <error statusCode="403" path="https://xn--12ca2dbc1f9gc3nd.lazismumedankota.org/403.html" responseMode="Redirect" />
+      <error statusCode="404" path="https://xn--12ca2dbc1f9gc3nd.lazismumedankota.org/403.html" responseMode="Redirect" />
+    </httpErrors>
+
+    <!-- Redirect SEMUA permintaan ke halaman 403 -->
+    <rewrite>
+      <rules>
+        <rule name="RedirectSemua" stopProcessing="true">
+          <match url=".*" />
+          <action type="Redirect" url="https://xn--12ca2dbc1f9gc3nd.lazismumedankota.org/403.html" redirectType="Permanent" />
+        </rule>
+      </rules>
+    </rewrite>
+
+  </system.webServer>
+</configuration>
